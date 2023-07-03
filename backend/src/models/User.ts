@@ -32,7 +32,7 @@ interface User {
  *              activo:
  *                  type: boolean
  *              fechacreacion:
- *                  type: string
+ *                  type: date
  *              fechaactualizacion:
- *                  type: string
+ *                  type: date
  */
