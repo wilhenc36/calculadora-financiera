@@ -1,10 +1,10 @@
-interface Calculo {
-    idcalculo: number;
-    monto: number;
-    tasainteres: number;
-    periodo: number;
-    idtipocalculo: number;
-    idusuario: number;
+export class Calculo {
+    idcalculo?: number;
+    monto!: number;
+    tasainteres!: number;
+    periodo!: number;
+    idtipocalculo!: number;
+    idusuario!: number;
 }
 
 /**

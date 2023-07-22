@@ -1,14 +1,15 @@
-interface User {
-  idusuario: number;
-  nombre: string;
-  apellido: string;
-  pais: string;
-  usuario: string;
-  correoelectronico: string;
-  contraseña: string;
-  activo: boolean;
-  fechacreacion: Date;
-  fechaactualizacion: Date;
+export class User {
+  idusuario?: number;
+  nombre!: string;
+  apellido!: string;
+  pais?: string;
+  usuario!: string;
+  correoelectronico!: string;
+  contraseña!: string;
+  activo?: boolean;
+  idrol!: number;
+  fechacreacion?: Date;
+  fechaactualizacion!: Date;
 }
 
 /**
@@ -18,21 +19,40 @@ interface User {
  *      SchemaUser:
  *          properties:
  *              idusuario:
- *                  type: number
+ *                required: false
+ *                type: number
  *              nombre:
- *                  type: string
- *              apellido:
- *                  type: string
+ *                required: true
+ *                type: string
+ *              apellido: 
+ *                required: true
+ *                type: string
  *              pais:
- *                  type: string
+ *                required: false
+ *                type: string
  *              usuario:
- *                  type: string
+ *                required: true
+ *                type: string
+ *              correoelectronico:
+ *                require: true
+ *                type: string
+ *                format: email
  *              contraseña:
- *                  type: string
+ *                required: true
+ *                type: string
+ *                format: password
  *              activo:
- *                  type: boolean
+ *                required: false
+ *                type: boolean
+ *              idrol:
+ *                required: false
+ *                type: number
  *              fechacreacion:
- *                  type: date
+ *                required: false  
+ *                type: string
+ *                format: date-time
  *              fechaactualizacion:
- *                  type: date
+ *                required: false
+ *                type: string
+ *                format: date-time
  */

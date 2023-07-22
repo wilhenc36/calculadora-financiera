@@ -1,9 +1,9 @@
-interface ChangePasswordRequest {
-    idsolicitud: number;
-    idusuario: number;
-    token: string;
-    fechacreacion: Date;
-    usado: boolean;
+export class ChangePasswordRequest {
+    idsolicitud?: number;
+    idusuario!: number;
+    token!: string;
+    fechacreacion?: Date;
+    usado?: boolean;
 }
 
 /**
@@ -13,6 +13,7 @@ interface ChangePasswordRequest {
  *      SchemaChangePasswordRequest:
  *          properties:
  *              idsolicitud:
+ *                  required: false
  *                  type: number
  *              idusuario:
  *                  type: number
