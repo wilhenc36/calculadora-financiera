@@ -9,13 +9,14 @@ const removeExtension = (filename: String) => {
   return filename.split(".").shift();
 };
 
-module.exports = () => {
+export default () => {
   fs.readdirSync(pathRouter).filter((file) => {
     const fileWithoutExt = removeExtension(file);
     const skip = ["index"].includes(String(fileWithoutExt));
 
     if (!skip) {
-      baseRouter.use(`/${fileWithoutExt}`, require(`./${fileWithoutExt}.routes`)());
+      const routerModule = require(`./${fileWithoutExt}.routes`);
+      baseRouter.use(`/${fileWithoutExt}`, routerModule.default());
     }
   });
 

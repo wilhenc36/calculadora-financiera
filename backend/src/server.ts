@@ -4,6 +4,7 @@ import { json, urlencoded } from 'body-parser';
 import cors from 'cors';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express';
+import routes from './routes/index.routes';
 
 const port = process.env.PORT || 8000;
 
@@ -37,7 +38,9 @@ const swaggerOptions = {
 }
 
 const apiSpecification = swaggerJsdoc(swaggerOptions);
-app.use("/", swaggerUI.serve, swaggerUI.setup(apiSpecification));
+app.use("/swagger", swaggerUI.serve, swaggerUI.setup(apiSpecification));
+
+app.use("/api", routes())
 
 export {
     app
