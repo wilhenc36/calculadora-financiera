@@ -36,6 +36,12 @@ To run the Calculadora Financiera in your local environment, follow the steps be
 1. You must use PostgreSQL as database manager.
 2. Create a database with the following tables: 
 
+	- Roles:
+	``` postgresql
+	idrol serial primary key,
+	rol varchar(60) not null
+	```
+
     - Usuarios: 
     ``` postgresql
     idusuario serial primary key,
@@ -46,6 +52,7 @@ To run the Calculadora Financiera in your local environment, follow the steps be
 	correoelectronico varchar(150) not null,
 	contraseña varchar(255) not null,
 	activo boolean default true,
+	idrol int references roles(idrol),
 	fechacreacion date default current_date,
 	fechaactualizacion date
     ```   
